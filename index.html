@@ -71,11 +71,7 @@ header{height:72px;background:#fff;border-bottom:1px solid var(--line);position:
 
 <script>
 let books=[
- {title:'Akuntansi Keuangan Menengah 1',major:'Akuntansi',semester:'Semester 3',price:65000,seller:'Andi Pratama',course:'Akuntansi Keuangan',condition:'Sangat Baik',location:'FEB UNM',cover:'c1'},
- {title:'Pengantar Akuntansi 1',major:'Akuntansi',semester:'Semester 1',price:40000,seller:'Siti Nurhaliza',course:'Pengantar Akuntansi',condition:'Baik',location:'Kampus Utama',cover:'c2'},
- {title:'Manajemen Keuangan',major:'Manajemen',semester:'Semester 3',price:55000,seller:'Dwi Ramadhan',course:'Manajemen Keuangan',condition:'Sangat Baik',location:'FEB UNM',cover:'c3'},
- {title:'Perpajakan',major:'Akuntansi',semester:'Semester 4',price:50000,seller:'Muhammad Iqbal',course:'Perpajakan',condition:'Baik',location:'Kampus Utama',cover:'c4'},
- {title:'Auditing (Pengauditan)',major:'Akuntansi',semester:'Semester 5',price:60000,seller:'Nabila Azzahra',course:'Auditing',condition:'Seperti Baru',location:'FEB UNM',cover:'c5'}
+
 ];
 function format(n){return 'Rp'+Number(n).toLocaleString('id-ID')}
 function render(list=books){let grid=document.getElementById('bookGrid');grid.innerHTML=list.map((b,i)=>`<article class="card book-card" onclick="openDetail(${books.indexOf(b)})"><div class="cover ${b.cover||'c1'}">${b.title}</div><div class="info"><div class="title">${b.title}</div><div class="meta">${b.major} • ${b.semester}</div><div class="price">${format(b.price)}</div><div class="seller">👤 oleh ${b.seller}</div></div></article>`).join('')||'<p>Tidak ada buku yang ditemukan.</p>'}
