@@ -68,7 +68,6 @@ header{height:72px;background:#fff;border-bottom:1px solid var(--line);position:
 </main>
 
 <nav class="nav-mobile"><button class="active" onclick="show('home')">⌂<span>Beranda</span></button><button onclick="document.getElementById('globalSearch').focus();show('home')">⌕<span>Cari</span></button><button onclick="show('sell')">＋<span>Jual</span></button><button onclick="show('chat')">☏<span>Chat</span></button><button onclick="show('profile')">♙<span>Profil</span></button></nav>
-
 let books=[
   {
     title: "Matematika Dasar",
@@ -82,6 +81,7 @@ let books=[
     description: "Buku masih bagus dan layak digunakan"
   }
 ];
+
 function format(n){return 'Rp'+Number(n).toLocaleString('id-ID')}
 function render(list=books){let grid=document.getElementById('bookGrid');grid.innerHTML=list.map((b,i)=>`<article class="card book-card" onclick="openDetail(${books.indexOf(b)})"><div class="cover ${b.cover||'c1'}">${b.title}</div><div class="info"><div class="title">${b.title}</div><div class="meta">${b.major} • ${b.semester}</div><div class="price">${format(b.price)}</div><div class="seller">👤 oleh ${b.seller}</div></div></article>`).join('')||'<p>Tidak ada buku yang ditemukan.</p>'}
 function filterBooks(q){q=q.toLowerCase();render(books.filter(b=>Object.values(b).join(' ').toLowerCase().includes(q)))}
